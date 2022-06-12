@@ -8,10 +8,7 @@ type Components =
   [<ReactComponent>]
   static member Card(cardLogic, cardIsPicked) =
     Html.div [
-      prop.classes [
-        "w-96 max-h-1 blocktext"
-      ]
-
+      prop.classes [ "w-96" ]
       prop.children [
         Daisy.card [
           card.bordered
@@ -21,9 +18,7 @@ type Components =
               Html.img [ prop.src cardLogic.img ]
             ]
             Daisy.cardBody [
-              prop.style [
-                style.alignItems.center
-              ]
+              prop.style [ style.alignItems.center ]
               prop.children [
                 Daisy.cardTitle cardLogic.title
                 Html.p cardLogic.ability
