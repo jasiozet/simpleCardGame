@@ -8,7 +8,10 @@ type Components =
   [<ReactComponent>]
   static member Card(cardLogic, cardIsPicked) =
     Html.div [
-      prop.classes [ "w-96 max-h-1"]
+      prop.classes [
+        "w-96 max-h-1 blocktext"
+      ]
+
       prop.children [
         Daisy.card [
           card.bordered
@@ -18,14 +21,19 @@ type Components =
               Html.img [ prop.src cardLogic.img ]
             ]
             Daisy.cardBody [
-              Daisy.cardTitle cardLogic.title
-              Html.p cardLogic.ability
-              Html.p cardLogic.alternative
-              Daisy.cardActions [
-                Daisy.button.button [
-                  prop.text "Pick"
-                  button.primary
-                  prop.onClick cardIsPicked
+              prop.style [
+                style.alignItems.center
+              ]
+              prop.children [
+                Daisy.cardTitle cardLogic.title
+                Html.p cardLogic.ability
+                Html.p cardLogic.alternative
+                Daisy.cardActions [
+                  Daisy.button.button [
+                    prop.text "Pick"
+                    button.primary
+                    prop.onClick cardIsPicked
+                  ]
                 ]
               ]
             ]
@@ -35,13 +43,14 @@ type Components =
     ]
 
   [<ReactComponent>]
-  static member CardsHand(cards : Card List) =
+  static member CardsHand(cards: Card List) =
     let (cardPicked, chooseCard) = React.useState (0)
     let whichCardWasPicked number _ = chooseCard (number)
+
     Html.div [
       Html.text (
         if cardPicked > 0 then
-          $"You picked card: #{cardPicked}"
+          $"Picked card: #{cardPicked}"
         else
           "Pick a card"
       )
