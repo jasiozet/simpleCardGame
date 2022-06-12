@@ -2,23 +2,25 @@ namespace App
 
 open Feliz
 open Feliz.DaisyUI
+open Logic
 
 type Components =
   [<ReactComponent>]
-  static member Card(img: string, title: string, cardIsPicked) =
+  static member Card(cardLogic, cardIsPicked) =
     Html.div [
-      prop.classes [ "w-96" ]
+      prop.classes [ "w-96 max-h-1"]
       prop.children [
         Daisy.card [
           card.bordered
           card.full
           prop.children [
             Html.figure [
-              Html.img [ prop.src img ]
+              Html.img [ prop.src cardLogic.img ]
             ]
             Daisy.cardBody [
-              Daisy.cardTitle title
-              Html.p "This will be a card text"
+              Daisy.cardTitle cardLogic.title
+              Html.p cardLogic.ability
+              Html.p cardLogic.alternative
               Daisy.cardActions [
                 Daisy.button.button [
                   prop.text "Pick"
@@ -33,7 +35,7 @@ type Components =
     ]
 
   [<ReactComponent>]
-  static member CardsHand() =
+  static member CardsHand(cards : Card List) =
     let (cardPicked, chooseCard) = React.useState (0)
     let whichCardWasPicked number _ = chooseCard (number)
     Html.div [
@@ -47,18 +49,17 @@ type Components =
         prop.style [
           style.display.flex
           style.flexDirection.row
+          style.flexWrap.nowrap
         ]
         prop.children [
-          Components.Card(
-            "https://cdn.britannica.com/55/174255-050-526314B6/brown-Guernsey-cow.jpg",
-            "Cow",
-            (whichCardWasPicked 1)
-          )
-          Components.Card(
-            "https://previews.123rf.com/images/monticello/monticello1306/monticello130600032/20330858-brown-chicken-in-grass.jpg",
-            "Chicken",
-            (whichCardWasPicked 2)
-          )
+          for card in cards do
+            Components.Card(card, (whichCardWasPicked card.id))
         ]
       ]
+    ]
+
+  [<ReactComponent>]
+  static member GameContainer() =
+    Html.div [
+      Components.CardsHand(Logic.exampleCards)
     ]

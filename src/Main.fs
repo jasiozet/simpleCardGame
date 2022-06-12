@@ -10,6 +10,6 @@ Fable.Core.JsInterop.importSideEffects "./index.css"
 console.log("Fable is up and running...");
 
 ReactDOM.render(
-    Components.CardsHand(),
+    Components.GameContainer(),
     document.getElementById "feliz-app"
 )
