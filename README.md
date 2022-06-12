@@ -1,7 +1,7 @@
-# Fable Feliz Feliz.DaisyUI Vite App
+# Simple Card Game using: Fable Feliz Feliz.DaisyUI Vite
 
-This is a template Fable project for me which uses [Vite](https://fable.io/Fable.Lit/docs/hmr.html) so you can easily get started and add your own code progressively.
-
+Trying to do something practical to practice the web stack for F#, I'm honestly just having fun here learning
+Disclaimer: I don't own the rights to any of the pictures used here. This is strictly non profit playground project.
 
 ## Requirements
 
@@ -9,43 +9,18 @@ This is a template Fable project for me which uses [Vite](https://fable.io/Fable
 * [node.js](https://nodejs.org)
 * An F# editor like Visual Studio, Visual Studio Code with [Ionide](http://ionide.io/) or [JetBrains Rider](https://www.jetbrains.com/rider/)
 
-
 ## Building and running the app
 
 * Install dependencies: `npm install`
 * Run the app: `npm start`
 * Build the app for deployment: `npm run build`
 
-Any modification you do to the F# code will be reflected in the web page after saving.
-
-## Project structure
-
-```
-.
-├── Nuget.Config
-├── README.md
-├── package-lock.json
-├── package.json - JS dependencies
-├── build - Ready to deploy files when you run `npm run build`
-├── dist - Compiled JS from F# file
-├── index.html - Main HTML file
-├── vite.config.js - config for vite
-├── tailwind.config.js - config for tailwind
-├── public
-│   ├── favicon.ico - Fable favicon
-└── src
-    ├── Main.fs - F# sample code
-    ├── Extensions.fs - F# helper functions from Feliz template
-    ├── Components.fs - F# sample react component
-    └── App.fsproj - F# project
-```
-
-## Stuff I (jasiozet) added:
+## Stuff I use here:
+* Fable https://fable.io/
 * Feliz https://zaid-ajaj.github.io/Feliz/#/
 * Feliz.DaisyUI https://dzoukr.github.io/Feliz.DaisyUI/#/
 * Vite https://fable.io/Fable.Lit/docs/hmr.html
 
-Commands for that:
-* femto install Feliz
-* femto Feliz.DaisyUI
-* npm i -D vite
+## Links that I found helpful:
+* Flexbox https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+* React passing data from child to parent https://bobbyhadz.com/blog/react-pass-data-from-child-to-parent
