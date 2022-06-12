@@ -1,13 +1,17 @@
 {
   "private": true,
+  "homepage": "https://jasiozet.github.io/simpleCardGame",
   "scripts": {
     "postinstall": "dotnet tool restore",
     "prestart": "dotnet tool restore",
     "build": "dotnet fable src --run vite build",
-    "start": "dotnet fable watch src -s --run vite"
+    "start": "dotnet fable watch src -s --run vite",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.7",
+    "gh-pages": "^4.0.0",
     "postcss": "^8.4.14",
     "tailwindcss": "^3.0.24",
     "vite": "^2.9.10"

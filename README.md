@@ -1,5 +1,6 @@
 # Simple Card Game using: Fable Feliz Feliz.DaisyUI Vite
 
+[Demo]https://jasiozet.github.io/simpleCardGame/
 Trying to do something practical to practice the web stack for F#, I'm honestly just having fun here learning
 Disclaimer: I don't own the rights to any of the pictures used here. This is strictly non profit playground project.
 
@@ -24,3 +25,4 @@ Disclaimer: I don't own the rights to any of the pictures used here. This is str
 ## Links that I found helpful:
 * Flexbox https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 * React passing data from child to parent https://bobbyhadz.com/blog/react-pass-data-from-child-to-parent
+* Publishing to github pages https://github.com/gitname/react-gh-pages (warning: needs a directory change for this template)
