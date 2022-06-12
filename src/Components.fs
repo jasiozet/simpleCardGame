@@ -18,7 +18,9 @@ type Components =
               Html.img [ prop.src cardLogic.img ]
             ]
             Daisy.cardBody [
-              prop.style [ style.alignItems.center ]
+              prop.style [
+                style.alignItems.center
+              ]
               prop.children [
                 Daisy.cardTitle cardLogic.title
                 Html.p cardLogic.ability
