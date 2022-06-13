@@ -7,9 +7,7 @@ open Fable.Core.JsInterop
 
 Fable.Core.JsInterop.importSideEffects "./index.css"
 
-console.log("Fable is up and running...");
-
 ReactDOM.render(
-    Components.GameContainer(),
-    document.getElementById "feliz-app"
+  Components.GameContainer(),
+  document.getElementById "feliz-app"
 )
